@@ -33,6 +33,8 @@ verify_server_certificates(int preverified, X509_STORE_CTX* ctx) noexcept;
 #include <boost/certify/detail/keystore_windows.ipp>
 #elif __APPLE__
 #include <boost/certify/detail/keystore_apple.ipp>
+#elif defined(ANDROID) || defined(__ANDROID__)
+#include <boost/certify/detail/keystore_android.ipp>
 #else
 #include <boost/certify/detail/keystore_default.ipp>
 #endif
